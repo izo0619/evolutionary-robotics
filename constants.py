@@ -8,3 +8,4 @@ fl_amplitude = np.pi/2
 fl_frequency = 10
 fl_phaseOffset = 0
 fl_targetAngles = fl_amplitude * np.sin(fl_frequency * np.linspace(0, 2*np.pi, 1000) + fl_phaseOffset)
+numberOfGenerations = 25

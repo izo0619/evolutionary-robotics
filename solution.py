@@ -1,17 +1,21 @@
 import numpy as np
 import pyrosim.pyrosim as pyrosim
 import os
+import random
 
 class SOLUTION:
 
     def __init__(self) -> None:
         self.weights = np.random.rand(3,2)*2 - 1
 
-    def Evaluate(self):
+    def Evaluate(self, directOrGUI):
         self.Create_World()
         self.Generate_Body()
         self.Generate_Brain()
-        os.system("python3 simulate.py")
+        os.system("python3 simulate.py " + directOrGUI)
+        f = open("fitness.txt", "r")
+        self.fitness = float(f.read())
+        f.close()
 
     def Create_World(self):
         # tell pyrosim the name of the file where information about the world you're about to create should be stored
@@ -41,5 +45,9 @@ class SOLUTION:
 
         pyrosim.End()
    
+    def Mutate(self):
+        randRow = random.randint(0, 2)
+        randCol = random.randint(0, 1)
+        self.weights[randRow][randCol] = random.random() * 2 + 1
 
 
