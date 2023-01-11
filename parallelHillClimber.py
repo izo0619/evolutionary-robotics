@@ -57,5 +57,6 @@ class PARALLEL_HILL_CLIMBER:
             parent.Wait_For_Simulation_To_End()
 
     def Show_Best(self):
-        bestKey = min(self.parents.items(), key=lambda x: x[1].fitness)[0] 
+        bestKey = min(self.parents.items(), key=lambda x: x[1].fitness)[0]
+        print("best fitness score: " + str(self.parents[bestKey].fitness))
         self.parents[bestKey].Start_Simulation("GUI")

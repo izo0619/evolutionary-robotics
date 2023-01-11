@@ -9,4 +9,8 @@ fl_frequency = 10
 fl_phaseOffset = 0
 fl_targetAngles = fl_amplitude * np.sin(fl_frequency * np.linspace(0, 2*np.pi, 1000) + fl_phaseOffset)
 numberOfGenerations = 10
-populationSize = 10
+populationSize = 20
+
+numMotorNeurons = 8
+numSensorNeurons = 9
+motorJointRange = 0.2
